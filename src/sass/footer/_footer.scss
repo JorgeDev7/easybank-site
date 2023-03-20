@@ -1,0 +1,92 @@
+@use '../custom' as *;
+@use '../base/mixins' as m;
+
+.footer {
+    background-color: $darkBlue;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+
+    @include media-breakpoint-up(lg) {
+        padding-bottom: 2rem;
+    }
+
+    &__grid {
+        display: grid;
+        place-items: center;
+        gap: 2.5rem;
+
+        @include media-breakpoint-up(lg) {
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+        }
+    }
+
+    &__logo {
+        @include media-breakpoint-up(lg) {
+            place-self: start;
+        }
+    }
+
+    &__social {
+        @include media-breakpoint-up(lg) {
+            grid-column: 1/2;
+            grid-row: 2/3;
+            place-self: center left;
+        }
+    }
+
+    &__social svg {
+        cursor: pointer;
+        transition: fill 200ms ease-in-out;
+
+        &:hover {
+            fill: $limeGreen;
+        }
+    }
+
+    &__lists {
+        @include media-breakpoint-up(lg) {
+            display: flex;
+            gap: 10rem;
+            grid-row: 1/3;
+            place-self: start;
+        }
+    }
+
+    &__list {
+        color: $grayishBlue;
+        margin-bottom: 0;
+
+        @include media-breakpoint-up(lg) {
+            color: $veryLightGray;
+        }
+    }
+
+    &__item {
+        padding-bottom: 1.5rem;
+        cursor: pointer;
+        font-size: 1.6rem;
+        transition: color 200ms ease-in-out;
+
+        &:hover {
+            color: $limeGreen;
+        }
+    }
+
+    &__btn {
+        @include m.btn;
+
+        @include media-breakpoint-up(lg) {
+            place-self: end;
+        }
+    }
+
+    &__copy {
+        color: $grayishBlue;
+        font-size: 1.2rem;
+
+        @include media-breakpoint-up(lg) {
+            place-self: center end;
+        }
+    }
+}

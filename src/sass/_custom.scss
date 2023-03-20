@@ -1,0 +1,36 @@
+// Font
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;700&display=swap');
+
+/// Custom Variables ///
+
+/// Colors
+
+// Primary
+$darkBlue: hsl(233, 26%, 24%);
+$limeGreen: hsl(136, 65%, 51%);
+$brightCyan: hsl(192, 70%, 51%);
+
+// Neutral
+$grayishBlue: hsl(233, 8%, 62%);
+$lightGrayishBlue: hsl(220, 16%, 96%);
+$veryLightGray: hsl(0, 0%, 98%);
+$white: hsl(0, 0%, 100%);
+
+/// Fonts
+
+$font-size-base: 1.8rem;
+$font-family-base: 'Public Sans', sans-serif;
+
+/// Hover
+$nav-link-hover-color: $darkBlue;
+
+/// Headings and Paragraphs
+$headings-margin-bottom: 0;
+$paragraph-margin-bottom: 0;
+
+/// Cards
+$card-border-radius: .5rem;
+$card-border-width: 0;
+
+// BOOTSTRAP
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';

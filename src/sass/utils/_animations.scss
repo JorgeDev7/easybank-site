@@ -1,0 +1,19 @@
+@keyframes overlay {
+    from {
+        transform: translateY(-400%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes overlayBg {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,24 @@
+@use '../custom' as *;
+
+@mixin btn {
+    border: 0;
+    background: linear-gradient(to right, $limeGreen, $brightCyan);
+    color: $veryLightGray;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    border-radius: 20rem;
+    font-weight: 700;
+    font-size: 1.6rem;
+    transition: opacity 300ms ease-in-out;
+
+    &:hover {
+        opacity: .7;
+    }
+}
+
+@mixin paraph ($size) {
+    color: $grayishBlue;
+    font-size: $size;
+}

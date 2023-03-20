@@ -1,0 +1,93 @@
+@use '../custom' as *;
+@use '../base/mixins' as m;
+
+.header {
+    position: relative;
+    background-color: $white;
+    z-index: 10;
+
+    &__icon-ham {
+        height: 2rem;
+        width: 3.3rem;
+        object-fit: cover;
+        cursor: pointer;
+    }
+
+    &__nav-list {
+        width: 100%;
+        background-color: $veryLightGray;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        margin-top: 2rem;
+        border-radius: .5rem;
+        animation: overlay 500ms ease-in-out;
+
+        @include media-breakpoint-up(lg) {
+            padding-top: 0;
+            padding-bottom: 0;
+            margin-top: 0;
+            background-color: $white;
+        }
+    }
+
+    &__nav-item {
+        text-align: center;
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+
+        @include media-breakpoint-up(lg) {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+    }
+
+    &__nav-link {
+        text-decoration: none;
+        color: $darkBlue;
+        font-weight: 400;
+        transition: color 400ms ease-in-out;
+
+        @include media-breakpoint-up(lg) {
+
+            color: $grayishBlue;
+
+            &::after {
+                content: '';
+                height: .5rem;
+                width: 0;
+                display: block;
+                background: linear-gradient(to right, $limeGreen, $brightCyan);
+                transition: width 400ms ease-in-out;
+            }
+        }
+
+        &:hover {
+            color: $darkBlue;
+
+            &::after {
+                width: 100%;
+            }
+        }
+
+    }
+
+    &__btn {
+        @include m.btn;
+    }
+}
+
+.overlay {
+    position: absolute;
+    top: 5.2rem;
+    left: 0;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(to bottom, rgba(45, 49, 77, .9), rgba(45, 49, 77, .4), rgba(45, 49, 77, .2), transparent);
+    animation: overlayBg 500ms ease-in-out;
+
+    @include media-breakpoint-up(lg) {
+        all: unset;
+    }
+}

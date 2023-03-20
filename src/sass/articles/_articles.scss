@@ -1,0 +1,63 @@
+@use '../custom' as *;
+@use '../base/mixins' as m;
+
+.articles {
+    margin-top: 10rem;
+
+    &__heading {
+        font-size: 3.5rem;
+        text-align: center;
+        color: $darkBlue;
+        margin-bottom: 3.5rem;
+
+        @include media-breakpoint-up(lg) {
+            text-align: start;
+        }
+    }
+
+    &__card {
+        margin-bottom: 4rem;
+        background-color: $white;
+        overflow: hidden;
+    }
+
+    &__mask {
+        overflow: hidden;
+    }
+
+    &__img {
+        width: 100%;
+        aspect-ratio: 12/9;
+        object-fit: cover;
+        transition: transform 300ms ease-out;
+
+        &:hover {
+            cursor: pointer;
+            transform: scale(1.1);
+        }
+    }
+
+    &__subtitle {
+        font-size: 1.2rem;
+        color: $grayishBlue;
+        margin-bottom: 1rem;
+        font-weight: 300;
+    }
+
+    &__title {
+        color: $darkBlue;
+        font-size: 1.9rem;
+        font-weight: 400;
+        margin-bottom: 1rem;
+        transition: color 300ms ease-in-out;
+
+        &:hover {
+            cursor: pointer;
+            color: $limeGreen;
+        }
+    }
+
+    &__text {
+        @include m.paraph(1.5rem);
+    }
+}

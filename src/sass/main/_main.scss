@@ -1,0 +1,47 @@
+@use '../custom' as *;
+@use '../base/mixins' as m;
+
+.main {
+    background-color: $lightGrayishBlue;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+
+    @include media-breakpoint-up(lg) {
+        padding-top: 10rem;
+        padding-bottom: 10rem;
+        margin-top: -16rem;
+    }
+
+    &__head {
+        text-align: center;
+
+        @include media-breakpoint-up(lg) {
+            max-width: 55rem;
+            text-align: start;
+        }
+    }
+
+    &__title {
+        font-weight: 300;
+        font-size: 3.5rem;
+        color: $darkBlue;
+        padding-bottom: 1.5rem;
+    }
+
+    &__text {
+        @include m.paraph(1.6rem);
+    }
+}
+
+.section {
+    margin-top: 5rem;
+
+    &__title {
+        font-size: 2rem;
+        color: $darkBlue;
+    }
+
+    &__text {
+        @include m.paraph(1.5rem)
+    }
+}

@@ -1,0 +1,78 @@
+@use '../custom' as *;
+@use '../base/mixins' as m;
+
+.hero {
+    position: relative;
+    background-image: url(../assets/bg-intro-mobile.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+
+    @include media-breakpoint-up(lg) {
+        background-image: none;
+        background-position: right center;
+    }
+
+    &__container {
+        @include media-breakpoint-up(lg) {
+            gap: 20rem;
+        }
+    }
+
+    &__img-bg {
+        position: absolute;
+        height: 100%;
+        right: -20rem;
+        top: -10rem;
+    }
+
+    &__img {
+        display: grid;
+        place-items: center;
+    }
+
+    &__img img {
+        display: block;
+        width: 100%;
+        transform: translateY(-10rem);
+
+        @include media-breakpoint-up(lg) {
+            width: 70rem;
+            margin-left: -20rem;
+            transform: translateX(19rem);
+            margin-top: -10rem;
+        }
+    }
+
+    &__content {
+        text-align: center;
+        transform: translateY(-5rem);
+        color: $darkBlue;
+        font-weight: 300;
+        z-index: 10;
+
+        @include media-breakpoint-up(lg) {
+            text-align: start;
+        }
+    }
+
+    &__title {
+        font-size: 4rem;
+
+        @include media-breakpoint-up(lg) {
+            font-size: 6rem
+        }
+    }
+
+    &__text {
+        @include m.paraph(1.6rem);
+        word-wrap: break-word;
+
+        @include media-breakpoint-up(lg) {
+            @include m.paraph(1.8rem);
+        }
+    }
+
+    &__btn {
+        @include m.btn;
+    }
+}
