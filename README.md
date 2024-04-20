@@ -12,3 +12,6 @@ npm install
 # Local Server
 npm run dev
 ```
+
+## URl 🔗
+https://easybanksitereact.netlify.app
